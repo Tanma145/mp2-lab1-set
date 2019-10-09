@@ -16,6 +16,12 @@
 
 int main()
 {
+	/*
+	TBitField bf(50);
+	int n;
+	cin >> n;
+	cout << bf.GetMemIndex(n) << endl << bf.GetMemMask(n);
+	*/
   int n, m, k, count;
 
   setlocale(LC_ALL, "Russian");
