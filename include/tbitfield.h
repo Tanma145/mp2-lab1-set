@@ -20,11 +20,10 @@ private:
   int  BitLen; // длина битового поля - макс. к-во битов
   TELEM *pMem; // память для представления битового поля
   int  MemLen; // к-во эл-тов Мем для представления бит.поля
-
+  int   GetMemIndex(const int n) const; // индекс в pМем для бита n       (#О2)
+  TELEM GetMemMask(const int n) const; // битовая маска для бита n       (#О3)
   // методы реализации
 public:
-	int   GetMemIndex(const int n) const; // индекс в pМем для бита n       (#О2)
-	TELEM GetMemMask(const int n) const; // битовая маска для бита n       (#О3)
   TBitField(int len);                //                                   (#О1)
   TBitField(const TBitField &bf);    //                                   (#П1)
   ~TBitField();                      //                                    (#С)
