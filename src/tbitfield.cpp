@@ -50,7 +50,11 @@ int TBitField::GetLength(void) const // получить длину (к-во б�
 
 void TBitField::SetBit(const int n) // установить бит
 {
-	pMem[GetMemIndex(n)] |= GetMemMask(n);
+	int pos;
+	pos = GetMemIndex(n);
+	TELEM mask;
+	mask = GetMemMask(n);
+	pMem[pos] |= mask;
 }
 
 void TBitField::ClrBit(const int n) // очистить бит
@@ -110,7 +114,10 @@ TBitField TBitField::operator&(const TBitField &bf) // операция "и"
 
 TBitField TBitField::operator~(void) // отрицание
 {
-	return *this;
+	TBitField bf(BitLen);
+	for (int i = 0; i < MemLen; i++)
+		bf.pMem[i] = ~pMem[i];
+	return bf;
 }
 
 // ввод/вывод
@@ -131,6 +138,7 @@ istream &operator>>(istream &is, TBitField &bf) // ввод
 ostream &operator<<(ostream &os, const TBitField &bf) // вывод
 {
 	for (int i = 0; i < bf.BitLen; i++)
-		os << 1;
+		if (bf.GetBit(i)) os << 1;
+		else os << 0;
 	return os;
 }

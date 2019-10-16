@@ -16,12 +16,14 @@
 
 int main()
 {
-	/*
-	TBitField bf(50);
 	int n;
 	cin >> n;
-	cout << bf.GetMemIndex(n) << endl << bf.GetMemMask(n);
-	*/
+	TBitField bf(n);
+	cout << bf << endl;
+	cin >> n;
+	bf.SetBit(n);
+	cout << bf << endl;
+	/*
   int n, m, k, count;
 
   setlocale(LC_ALL, "Russian");
@@ -95,6 +97,7 @@ int main()
     }
   cout << endl;
   cout << "В первых " << n << " числах " << count << " простых" << endl;
+  */
 }
 
 #endif
