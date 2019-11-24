@@ -15,15 +15,20 @@
 #include "tbitfield.h"
 
 int main()
-{
-	int n;
-	cin >> n;
-	TBitField bf(n);
-	cout << bf << endl;
-	cin >> n;
-	bf.SetBit(n);
-	cout << bf << endl;
-	/*
+{/*
+	try {
+		int n;
+		cin >> n;
+		TBitField bf(n);
+		cout << bf << endl;
+		cin >> n;
+		bf.SetBit(n);
+		cout << bf << endl;
+	}
+	catch (int a) {
+		cout << "oof: " << a;
+	}
+	*/
   int n, m, k, count;
 
   setlocale(LC_ALL, "Russian");
@@ -97,7 +102,6 @@ int main()
     }
   cout << endl;
   cout << "В первых " << n << " числах " << count << " простых" << endl;
-  */
 }
 
 #endif
