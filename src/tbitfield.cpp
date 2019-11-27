@@ -153,7 +153,7 @@ istream &operator>>(istream &is, TBitField &bf) // ввод
 
 ostream &operator<<(ostream &os, const TBitField &bf) // вывод
 {
-	for (int i = bf.BitLen - 1; i >= 0; i--)
+	for (int i = 0; i < bf.BitLen; i++)
 		if (bf.GetBit(i)) os << 1;
 		else os << 0;
 	return os;
